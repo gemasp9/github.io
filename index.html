@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Navigation Bar -->
   <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
@@ -14,32 +15,82 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Landing Page Section -->
   <section id="home" class="landing-page">
     <h1>A Fresh Perspective for Your Brand</h1>
-    <p>Helping businesses thrive with creativity, strategy, and purpose. Let's work together to turn ideas into impact.</p>
+    <p>Helping businesses thrive with creativity, strategy, and purpose. Let’s work together to turn ideas into impact.</p>
     <a href="#services" class="cta-button">See What I Offer</a>
   </section>
 
-  <section id="services">
+  <!-- Services Section -->
+  <section id="services" class="services">
     <h2>Services</h2>
-    <p>Email Marketing</p>
-    <p>SEO Optimization</p>
-    <p>Creative Direction</p>
+    <p><strong>Email Marketing:</strong> Custom campaigns that engage and convert your audience.</p>
+    <p><strong>SEO Optimization:</strong> Get discovered with tailored strategies to boost your visibility.</p>
+    <p><strong>Creative Direction:</strong> Transforming ideas into bold visuals and compelling stories.</p>
   </section>
 
-  <section id="portfolio">
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
     <h2>Portfolio</h2>
-    <p>Project 1: Event Email Campaign</p>
-    <p>Project 2: SEO Strategy</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">Project 1: Event Email Campaign</div>
+      <div class="portfolio-item">Project 2: SEO Strategy</div>
+    </div>
   </section>
 
-  <section id="contact">
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
     <h2>Contact Me</h2>
     <p>Email me at <a href="mailto:youremail@example.com">youremail@example.com</a></p>
   </section>
 
+  <!-- Dynamic Background Script -->
   <script>
-    // Place the JavaScript for the dynamic background here
+    const canvas = document.createElement("canvas");
+    document.body.prepend(canvas);
+    const ctx = canvas.getContext("2d");
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    window.addEventListener("resize", resize);
+    resize();
+
+    const dots = Array.from({ length: 100 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 2,
+      dy: (Math.random() - 0.5) * 2,
+    }));
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      dots.forEach((dot) => {
+        ctx.beginPath();
+        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fill();
+      });
+    };
+
+    const update = () => {
+      dots.forEach((dot) => {
+        dot.x += dot.dx;
+        dot.y += dot.dy;
+        if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
+        if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
+      });
+    };
+
+    const animate = () => {
+      draw();
+      update();
+      requestAnimationFrame(animate);
+    };
+    animate();
   </script>
 </body>
 </html>
