@@ -1,7 +1,6 @@
-/* Body with Dynamic Background */
+/* Global Styles */
 body {
   margin: 0;
-  height: 100vh;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
   --x: calc(var(--posX, 0) * 1px);
@@ -16,11 +15,46 @@ body {
   background-blend-mode: overlay, overlay, difference, difference, difference, normal;
 }
 
-/* Graphic Section with Background Image */
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 20px;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Landing Page */
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Graphic Section */
 .graphic-section {
-  background: url('<Website gema.png>') no-repeat center center; /* Replace with uploaded image path */
-  background-size: cover; /* Ensures the image covers the section */
-  color: #fff; /* White text */
+  background: url('images/Website-gema.png') no-repeat center center;
+  background-size: cover;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,18 +64,41 @@ body {
 }
 
 .graphic-section .graphic-content {
-  max-width: 700px;
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent overlay for better text readability */
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
 }
 
-.graphic-section h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+/* Bold Section */
+.bold-section {
+  background-color: #FF6B6B;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  min-height: 100vh;
 }
 
-.graphic-section p {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+.bold-section h2 {
+  font-size: 3rem;
+}
+
+.bold-section p {
+  font-size: 1.2rem;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #1E1E1E;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.contact-section a {
+  color: #FF6600;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
 }
