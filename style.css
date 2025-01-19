@@ -6,8 +6,8 @@
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: #121212; /* Black background */
+    color: #FFFFFF; /* White text */
     padding: 20px;
 }
 
@@ -27,8 +27,8 @@
 
 .cta-button {
     display: inline-block;
-    background-color: #ff6600; /* Bright orange button */
-    color: #fff;
+    background-color: #FF6600; /* Bright orange button */
+    color: #FFFFFF;
     padding: 15px 30px;
     font-size: 1.2rem;
     font-weight: bold;
@@ -39,7 +39,7 @@
 }
 
 .cta-button:hover {
-    background-color: #e65500; /* Darker orange on hover */
+    background-color: #FFD700; /* Darker orange on hover */
     transform: scale(1.05); /* Slight zoom effect */
 }
 
@@ -48,8 +48,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #F5F5DC;
+    color: #333333;
 }
 
 nav {
@@ -81,13 +81,13 @@ section {
 }
 
 #home {
-    background-color: #4CAF50;
+    background-color: #008080;
     color: white;
     text-align: center;
 }
 
 #services, #portfolio, #contact {
-    background-color: #f9f9f9;
+    background-color: #F5F5DC;
     text-align: center;
 }
 
@@ -115,7 +115,7 @@ p {
 .portfolio-item {
     background: white;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #FFFFFF;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
