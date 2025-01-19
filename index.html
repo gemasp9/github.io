@@ -53,5 +53,14 @@
       });
     });
   </script>
+  <script>
+  document.addEventListener('mousemove', (event) => {
+    const x = (event.clientX / window.innerWidth) - 0.5;
+    const y = (event.clientY / window.innerHeight) - 0.5;
+    document.body.style.setProperty('--posX', x * 20);
+    document.body.style.setProperty('--posY', y * 20);
+  });
+</script>
+
 </body>
 </html>
