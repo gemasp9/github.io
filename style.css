@@ -1,3 +1,48 @@
+/* Landing Page Styles */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 20px;
+}
+
+.landing-page h1 {
+    font-size: 4rem; /* Big, bold letters */
+    font-weight: bold;
+    margin: 0 0 20px;
+    line-height: 1.2;
+}
+
+.landing-page p {
+    font-size: 1.5rem; /* Smaller subtext */
+    margin: 0 0 30px;
+    line-height: 1.5;
+    max-width: 700px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ff6600; /* Bright orange button */
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #e65500; /* Darker orange on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
 /* Global styles */
 body {
     font-family: Arial, sans-serif;
