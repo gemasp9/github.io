@@ -4,41 +4,115 @@ body {
   font-family: Arial, sans-serif;
   background-color: #121212;
   color: #FFFFFF;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #333;
+  background: rgba(0, 0, 0, 0.8);
   padding: 10px;
+  z-index: 10;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
   margin: 0 15px;
+  font-weight: bold;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Section Styles */
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 20px;
+  box-sizing: border-box;
+}
+
+/* Landing Page */
 .landing-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
-  padding: 20px;
+}
+
+.landing-page h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.landing-page p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
 }
 
 .cta-button {
   background-color: #FF6600;
-  color: #FFF;
-  padding: 10px 20px;
+  color: #FFFFFF;
+  padding: 15px 30px;
   text-decoration: none;
   border-radius: 5px;
+  font-size: 1.2rem;
 }
 
 .cta-button:hover {
   background-color: #FFD700;
+}
+
+/* Services Section */
+.services {
+  background-color: #1E1E1E;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.services p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+/* Portfolio Section */
+.portfolio {
+  background-color: #282828;
+  text-align: center;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-item {
+  background-color: #1E1E1E;
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
+
+/* Contact Section */
+.contact {
+  background-color: #121212;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+}
+
+.contact p {
+  font-size: 1.2rem;
 }
