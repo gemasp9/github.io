@@ -1,11 +1,11 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #121212; /* Default black background */
+  background: linear-gradient(120deg, #FF6B6B, #845EC2, #00C9A7, #FFC75F);
+  background-size: 400% 400%;
   color: #FFFFFF;
   overflow-x: hidden;
 }
-
 canvas {
   position: fixed;
   top: 0;
