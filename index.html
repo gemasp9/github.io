@@ -5,156 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Ensure the background canvas covers the entire page */
-    body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #000;
-      color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 10;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      width: 100%;
-      min-height: 100vh;
-      padding: 100px 20px;
-      box-sizing: border-box;
-      text-align: center;
-    }
-
-    .landing-page {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      min-height: 100vh;
-      background: linear-gradient(120deg, #FF6B6B, #845EC2, #00C9A7, #FFC75F);
-      background-size: 400% 400%;
-      animation: gradientAnimation 15s ease infinite;
-      color: #fff;
-      padding: 20px;
-    }
-
-    .landing-page h1 {
-      font-size: 4rem;
-      font-weight: bold;
-      margin: 0 0 20px;
-      line-height: 1.2;
-    }
-
-    .landing-page p {
-      font-size: 1.5rem;
-      margin: 0 0 30px;
-      line-height: 1.5;
-      max-width: 700px;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background-color: #FF6600;
-      color: #FFFFFF;
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .cta-button:hover {
-      background-color: #FFD700;
-    }
-
-    @keyframes gradientAnimation {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    .services, .portfolio, .contact {
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    .services h2, .portfolio h2, .contact h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .services p, .portfolio p, .contact p {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-    }
-  </style>
 </head>
 <body>
+  <!-- Dynamic Background -->
+  <canvas id="backgroundCanvas"></canvas>
 
   <!-- Navigation Bar -->
   <nav>
     <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
+    <a href="#section2">Graphic Section</a>
+    <a href="#section3">Bold Section</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Landing Page Section -->
+  <!-- Landing Page -->
   <section id="home" class="landing-page">
     <h1>A Fresh Perspective for Your Brand</h1>
     <p>Helping businesses thrive with creativity, strategy, and purpose. Let’s work together to turn ideas into impact.</p>
-    <a href="#services" class="cta-button">See What I Offer</a>
+    <a href="#section2" class="cta-button">Discover More</a>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <h2>Services</h2>
-    <p>Email Marketing: Custom campaigns that engage and convert your audience.</p>
-    <p>SEO Optimization: Get discovered with tailored strategies to boost your visibility.</p>
-    <p>Creative Direction: Transforming ideas into bold visuals and compelling stories.</p>
+  <!-- Graphic Section -->
+  <section id="section2" class="graphic-section">
+    <div class="graphic-content">
+      <h2>Efficiency Beyond Limits</h2>
+      <p>Explore groundbreaking solutions to redefine your boundaries.</p>
+      <img src="your-hand-image-path.jpg" alt="Cool Hand Graphic">
+    </div>
   </section>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio">
-    <h2>Portfolio</h2>
-    <p>Project 1: Event Email Campaign</p>
-    <p>Project 2: SEO Strategy</p>
+  <!-- Bold Section -->
+  <section id="section3" class="bold-section">
+    <h2>Bold Ideas for Bold Brands</h2>
+    <p>We turn bold visions into reality with a strategy-driven approach.</p>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Reach out to me at <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+  <!-- Add Your Contact Section Here -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
   </section>
 
+  <script src="script.js"></script>
 </body>
 </html>
