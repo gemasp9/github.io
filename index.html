@@ -6,7 +6,7 @@
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Ensure the background covers the entire page */
+    /* Ensure the background canvas covers the entire page */
     body {
       margin: 0;
       padding: 0;
@@ -32,10 +32,19 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
     }
 
     nav a:hover {
       text-decoration: underline;
+    }
+
+    section {
+      width: 100%;
+      min-height: 100vh;
+      padding: 100px 20px;
+      box-sizing: border-box;
+      text-align: center;
     }
 
     .landing-page {
@@ -53,14 +62,14 @@
     }
 
     .landing-page h1 {
-      font-size: 4rem; /* Big, bold letters */
+      font-size: 4rem;
       font-weight: bold;
       margin: 0 0 20px;
       line-height: 1.2;
     }
 
     .landing-page p {
-      font-size: 1.5rem; /* Smaller subtext */
+      font-size: 1.5rem;
       margin: 0 0 30px;
       line-height: 1.5;
       max-width: 700px;
@@ -68,7 +77,7 @@
 
     .cta-button {
       display: inline-block;
-      background-color: #FF6600; /* Bright orange button */
+      background-color: #FF6600;
       color: #FFFFFF;
       padding: 15px 30px;
       font-size: 1.2rem;
@@ -92,9 +101,26 @@
         background-position: 0% 50%;
       }
     }
+
+    .services, .portfolio, .contact {
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .services h2, .portfolio h2, .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .services p, .portfolio p, .contact p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Navigation Bar -->
   <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
@@ -103,10 +129,32 @@
   </nav>
 
   <!-- Landing Page Section -->
-  <section class="landing-page">
+  <section id="home" class="landing-page">
     <h1>A Fresh Perspective for Your Brand</h1>
     <p>Helping businesses thrive with creativity, strategy, and purpose. Let’s work together to turn ideas into impact.</p>
     <a href="#services" class="cta-button">See What I Offer</a>
   </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Services</h2>
+    <p>Email Marketing: Custom campaigns that engage and convert your audience.</p>
+    <p>SEO Optimization: Get discovered with tailored strategies to boost your visibility.</p>
+    <p>Creative Direction: Transforming ideas into bold visuals and compelling stories.</p>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio">
+    <h2>Portfolio</h2>
+    <p>Project 1: Event Email Campaign</p>
+    <p>Project 2: SEO Strategy</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Reach out to me at <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+  </section>
+
 </body>
 </html>
