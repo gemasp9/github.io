@@ -5,92 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <style>
+    /* Ensure the background canvas covers the entire page */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
 
-  <!-- Landing Page Section -->
-  <section id="home" class="landing-page">
-    <h1>A Fresh Perspective for Your Brand</h1>
-    <p>Helping businesses thrive with creativity, strategy, and purpose. Let’s work together to turn ideas into impact.</p>
-    <a href="#services" class="cta-button">See What I Offer</a>
-  </section>
+    #backgroundCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Place it behind all content */
+    }
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <h2>Services</h2>
-    <p><strong>Email Marketing:</strong> Custom campaigns that engage and convert your audience.</p>
-    <p><strong>SEO Optimization:</strong> Get discovered with tailored strategies to boost your visibility.</p>
-    <p><strong>Creative Direction:</strong> Transforming ideas into bold visuals and compelling stories.</p>
-  </section>
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
 
-  <!-- Portfolio Section -->
-  <section id="portfolio" class="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">Project 1: Event Email Campaign</div>
-      <div class="portfolio-item">Project 2: SEO Strategy</div>
-    </div>
-  </section>
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Email me at <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-  </section>
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-  <!-- Dynamic Background Script -->
-  <script>
-    const canvas = document.createElement("canvas");
-    document.body.prepend(canvas);
-    const ctx = canvas.getContext("2d");
+    .landing-page {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+      background-color: transparent;
+      color: #fff;
+      padding: 20px;
+    }
 
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    window.addEventListener("resize", resize);
-    resize();
+    .landing-page h1 {
+      font-size: 4rem; /* Big, bold letters */
+      font-weight: bold;
+      margin: 0 0 20px;
+      line-height: 1.2;
+    }
 
-    const dots = Array.from({ length: 100 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 2 + 1,
-      dx: (Math.random() - 0.5) * 2,
-      dy: (Math.random() - 0.5) * 2,
-    }));
+    .landing-page p {
+      font-size: 1.5rem; /* Smaller subtext */
+      margin: 0 0 30px;
+      line-height: 1.5;
+      max-width: 700px;
+    }
 
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      dots.forEach((dot) => {
-        ctx.beginPath();
-        ctx.arc(dot.x, dot.y, dot.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "#FFFFFF";
-        ctx.fill();
-      });
-    };
-
-    const update = () => {
-      dots.forEach((dot) => {
-        dot.x += dot.dx;
-        dot.y += dot.dy;
-        if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
-        if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
-      });
-    };
-
-    const animate = () => {
-      draw();
-      update();
-      requestAnimationFrame(animate);
-    };
-    animate();
-  </script>
-</body>
-</html>
+    .cta-button {
+      display: inline-block;
+      background-color: #FF6600; /* Bright orange button */
+      color: #FFFFFF;
+      padding: 15px 30px;
+      font-size: 1.2
