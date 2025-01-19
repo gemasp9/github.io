@@ -1,10 +1,14 @@
 /* Global Styles */
 body {
   margin: 0;
+  height: 100vh;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
+
+  /* Dynamic Background */
   --x: calc(var(--posX, 0) * 1px);
   --y: calc(var(--posY, 0) * 1px);
+
   background-image: 
     linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
     radial-gradient(90% 100% at calc(50% + var(--x)) calc(0% + var(--y)), rgb(200 200 200), rgb(22 0 45)), 
@@ -13,6 +17,23 @@ body {
     radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 77 0), rgb(0 200 255)), 
     linear-gradient(60deg, rgb(255 0 0), rgb(120 86 255));
   background-blend-mode: overlay, overlay, difference, difference, difference, normal;
+
+  /* Animation */
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+/* Keyframes for smooth background animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Navigation */
