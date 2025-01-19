@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Dynamic Background -->
-  <canvas id="backgroundCanvas"></canvas>
-
   <!-- Navigation Bar -->
   <nav>
     <a href="#home">Home</a>
@@ -30,7 +27,7 @@
     <div class="graphic-content">
       <h2>Efficiency Beyond Limits</h2>
       <p>Explore groundbreaking solutions to redefine your boundaries.</p>
-      <img src="Website gema.png" alt="Miguel angel cool Graphic">
+      <img src="Website-gema.png" alt="Miguel angel cool Graphic">
     </div>
   </section>
 
@@ -40,12 +37,20 @@
     <p>We turn bold visions into reality with a strategy-driven approach.</p>
   </section>
 
-  <!-- Add Your Contact Section Here -->
+  <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
   </section>
 
-  <script src="script.js"></script>
+  <!-- JavaScript for Dynamic Background -->
+  <script>
+    document.addEventListener('mousemove', (event) => {
+      const x = (event.clientX / window.innerWidth) - 0.5;
+      const y = (event.clientY / window.innerHeight) - 0.5;
+      document.body.style.setProperty('--posX', x * 20);
+      document.body.style.setProperty('--posY', y * 20);
+    });
+  </script>
 </body>
 </html>
