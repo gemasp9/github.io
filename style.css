@@ -1,28 +1,25 @@
-/* Dynamic Background Canvas */
-#backgroundCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Keeps it behind other content */
+/* Body with Dynamic Background */
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  --x: calc(var(--posX, 0) * 1px);
+  --y: calc(var(--posY, 0) * 1px);
+  background-image: 
+    linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
+    radial-gradient(90% 100% at calc(50% + var(--x)) calc(0% + var(--y)), rgb(200 200 200), rgb(22 0 45)), 
+    radial-gradient(100% 100% at calc(80% - var(--x)) calc(0% - var(--y)), rgb(250 255 0), rgb(36 0 0)), 
+    radial-gradient(150% 210% at calc(100% + var(--x)) calc(0% + var(--y)), rgb(20 175 125), rgb(0 10 255)), 
+    radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 77 0), rgb(0 200 255)), 
+    linear-gradient(60deg, rgb(255 0 0), rgb(120 86 255));
+  background-blend-mode: overlay, overlay, difference, difference, difference, normal;
 }
 
-/* Landing Page */
-.landing-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-  color: #fff;
-  padding: 20px;
-}
-
-/* Graphic Section */
+/* Graphic Section with Background Image */
 .graphic-section {
-  background-color: #000; /* Black background */
+  background: url('<Website gema.png>') no-repeat center center; /* Replace with uploaded image path */
+  background-size: cover; /* Ensures the image covers the section */
   color: #fff; /* White text */
   display: flex;
   justify-content: center;
@@ -34,6 +31,9 @@
 
 .graphic-section .graphic-content {
   max-width: 700px;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent overlay for better text readability */
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .graphic-section h2 {
@@ -41,47 +41,7 @@
   margin-bottom: 20px;
 }
 
-.graphic-section img {
-  max-width: 100%;
-  margin-top: 20px;
-}
-
-/* Bold Section */
-.bold-section {
-  background-color: #FF6B6B; /* Bold red background */
-  color: #fff;
-  text-align: center;
-  padding: 80px 20px;
-  min-height: 100vh;
-}
-
-.bold-section h2 {
-  font-size: 3rem;
+.graphic-section p {
+  font-size: 1.5rem;
   margin-bottom: 20px;
-}
-
-.bold-section p {
-  font-size: 1.2rem;
-}
-
-/* Contact Section */
-.contact-section {
-  background-color: #1E1E1E; /* Dark gray background */
-  color: #fff;
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.contact-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.contact-section a {
-  color: #FF6600;
-  text-decoration: none;
-}
-
-.contact-section a:hover {
-  text-decoration: underline;
 }
