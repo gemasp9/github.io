@@ -74,7 +74,7 @@ nav a:hover {
 /* Graphic Section with Image and Solid Color Overlay */
 .graphic-section {
   position: relative; /* To position the overlay properly */
-  background: url('Website-gema.png') no-repeat center center;
+  background: url('Website gema.png') no-repeat center center;
   background-size: cover;
   color: #fff;
   display: flex;
