@@ -118,19 +118,6 @@ nav a:hover {
 }
 
 
-/* Overlay Element */
-.graphic-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
-  z-index: 1; /* Sits between the image and background */
-}
-
-
 /* Content Styling */
 .graphic-section .graphic-content {
   position: relative; /* Ensures content is above the overlay */
