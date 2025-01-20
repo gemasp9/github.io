@@ -103,7 +103,7 @@ nav a:hover {
 
 .graphic-section {
   position: relative; /* Enables layering */
-  background-color: #121212; /* Solid dark background */
+  background-color: #003333; /* Solid dark background */
   background: url('Website gema.png') no-repeat center center;
   background-size: cover;
   color: #fff;
