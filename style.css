@@ -102,9 +102,10 @@ nav a:hover {
 }
 
 .graphic-section {
-  background-color: #121212; /* Solid color fallback */
+  position: relative; /* Enables layering */
+  background-color: #121212; /* Solid dark background */
   background: url('Website gema.png') no-repeat center center;
-  background-size: cover; /* Ensure it covers the section */
+  background-size: cover;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -114,11 +115,26 @@ nav a:hover {
   padding: 20px;
 }
 
+/* Optional Overlay for Better Contrast */
+.graphic-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 1;
+}
+
 .graphic-section .graphic-content {
+  position: relative; /* Keeps content above the overlay */
+  z-index: 2;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
 }
+
 
 
 /* Text Styling */
