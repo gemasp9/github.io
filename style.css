@@ -1,27 +1,28 @@
 /* Global Styles */
 body {
   margin: 0;
-  height: 100vh;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
-
-  /* Dynamic Background */
-  --x: calc(var(--posX, 0) * 1px);
-  --y: calc(var(--posY, 0) * 1px);
-
-  background-image: 
-    linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
-    radial-gradient(90% 100% at calc(50% + var(--x)) calc(0% + var(--y)), rgb(200 200 200), rgb(22 0 45)), 
-    radial-gradient(100% 100% at calc(80% - var(--x)) calc(0% - var(--y)), rgb(250 255 0), rgb(36 0 0)), 
-    radial-gradient(150% 210% at calc(100% + var(--x)) calc(0% + var(--y)), rgb(20 175 125), rgb(0 10 255)), 
-    radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 77 0), rgb(0 200 255)), 
-    linear-gradient(60deg, rgb(255 0 0), rgb(120 86 255));
-  background-blend-mode: overlay, overlay, difference, difference, difference, normal;
-
-  /* Animation */
-  background-size: 200% 200%;
-  animation: gradientAnimation 10s ease infinite;
 }
+
+:root {
+  --dynamic-background: linear-gradient(
+    115deg,
+    rgb(211, 255, 215),
+    rgb(0, 0, 0)
+  ),
+  radial-gradient(
+    90% 100% at 50% 0%,
+    rgb(200, 200, 200),
+    rgb(22, 0, 45)
+  ),
+  radial-gradient(
+    100% 100% at 80% 0%,
+    rgb(250, 255, 0),
+    rgb(36, 0, 0)
+  );
+}
+
 body {
   height: 100vh;
   margin: 0;
@@ -84,7 +85,6 @@ nav a:hover {
   padding: 20px;
   background: var(--dynamic-background); /* Use dynamic background */
 }
-
 .graphic-section {
   background-color: #121212; /* Solid background */
   color: #fff;
