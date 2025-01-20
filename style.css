@@ -5,23 +5,36 @@ body {
   overflow-x: hidden;
 }
 
-:root {
-  --dynamic-background: linear-gradient(
-    115deg,
-    rgb(211, 255, 215),
-    rgb(0, 0, 0)
-  ),
-  radial-gradient(
-    90% 100% at 50% 0%,
-    rgb(200, 200, 200),
-    rgb(22, 0, 45)
-  ),
-  radial-gradient(
-    100% 100% at 80% 0%,
-    rgb(250, 255, 0),
-    rgb(36, 0, 0)
-  );
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  color: #fff;
+  padding: 20px;
+
+  /* Dynamic background specific to landing page */
+  background-image: linear-gradient(
+      115deg,
+      rgb(211, 255, 215),
+      rgb(0, 0, 0)
+    ),
+    radial-gradient(
+      90% 100% at 50% 0%,
+      rgb(200, 200, 200),
+      rgb(22, 0, 45)
+    ),
+    radial-gradient(
+      100% 100% at 80% 0%,
+      rgb(250, 255, 0),
+      rgb(36, 0, 0)
+    );
+  background-blend-mode: overlay, overlay, difference;
 }
+
+
 
 /* Keyframes for smooth background animation */
 @keyframes gradientAnimation {
@@ -68,26 +81,30 @@ nav a:hover {
   min-height: 100vh;
   color: #fff;
   padding: 20px;
-  background: var(--dynamic-background); /* Use dynamic background */
-}
-.graphic-section {
-  background-color: #121212; /* Solid background */
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-  padding: 20px;
-  background: url('https://your-image-url.com') no-repeat center center;
-  background-size: contain; /* Ensures the image fits nicely */
+
+  /* Dynamic background specific to the landing page */
+  background-image: linear-gradient(
+      115deg,
+      rgb(211, 255, 215),
+      rgb(0, 0, 0)
+    ),
+    radial-gradient(
+      90% 100% at 50% 0%,
+      rgb(200, 200, 200),
+      rgb(22, 0, 45)
+    ),
+    radial-gradient(
+      100% 100% at 80% 0%,
+      rgb(250, 255, 0),
+      rgb(36, 0, 0)
+    );
+  background-blend-mode: overlay, overlay, difference;
 }
 
-
 .graphic-section {
-  background-color: #121212; /* Solid background color */
+  background-color: #121212; /* Solid color fallback */
   background: url('Website gema.png') no-repeat center center;
-  background-size: contain; /* Keeps the image contained */
+  background-size: cover; /* Ensure it covers the section */
   color: #fff;
   display: flex;
   justify-content: center;
@@ -97,12 +114,12 @@ nav a:hover {
   padding: 20px;
 }
 
-.graphic-content {
-  background: none; /* Remove overlay */
+.graphic-section .graphic-content {
   padding: 20px;
-  border-radius: 10px; /* You can keep this for rounded edges if you like */
-  max-width: 700px; /* Optional for text alignment */
+  border-radius: 10px;
+  text-align: center;
 }
+
 
 /* Text Styling */
 .graphic-section h2 {
