@@ -117,16 +117,6 @@ nav a:hover {
   font-size: 1.2rem;
 }
 
-
-/* Content Styling */
-.graphic-section .graphic-content {
-  position: relative; /* Ensures content is above the overlay */
-  z-index: 2;
-  max-width: 700px;
-  text-align: center;
-}
-
-
 /* Bold Section */
 .bold-section {
   background-color: #FF6B6B;
