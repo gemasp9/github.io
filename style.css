@@ -71,11 +71,10 @@ nav a:hover {
   padding: 20px;
 }
 
-
-/* Graphic Section with Image and Solid Background */
+/* Graphic Section with Solid Background and Image */
 .graphic-section {
-  position: relative; /* Ensures content layers properly */
-  background-color: #000; /* Solid color background */
+  position: relative; /* Enables layering for content */
+  background-color: #000; /* Solid black background */
   color: #fff; /* White text */
   display: flex;
   justify-content: center;
@@ -85,19 +84,39 @@ nav a:hover {
   padding: 20px;
 }
 
-/* Add the Image as a Foreground Element */
-.graphic-section .graphic-content {
-  position: relative;
-  z-index: 2; /* Ensures it stays above the overlay */
-  max-width: 700px;
-  text-align: center;
+/* Adding the Background Image */
+.graphic-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/Website-gema.png') no-repeat center center;
+  background-size: contain; /* Adjusts the image scaling */
+  z-index: 1; /* Keeps the image behind the content */
+  opacity: 1; /* Adjust the transparency if needed */
 }
 
-.graphic-section .graphic-content img {
-  max-width: 100%;
-  border-radius: 10px; /* Optional for styling */
+/* Content Styling */
+.graphic-section .graphic-content {
+  position: relative; /* Keeps content above the background */
+  z-index: 2; /* Ensures content is on top of the image */
+  background: rgba(0, 0, 0, 0.7); /* Optional dark overlay for text readability */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Text Styling */
+.graphic-section h2 {
+  font-size: 3rem;
   margin-bottom: 20px;
 }
+
+.graphic-section p {
+  font-size: 1.2rem;
+}
+
 
 /* Overlay Element */
 .graphic-section::before {
