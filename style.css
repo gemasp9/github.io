@@ -104,33 +104,40 @@ nav a:hover {
 /* Optional Overlay for Better Contrast */
 
 .graphic-section {
-  background-color: #1a1a2e; /* Solid dark background */
-  color: #fff;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center; /* Vertically center content */
+  background-color: #121212; /* Solid dark background */
+  color: #fff; /* White text */
   min-height: 100vh;
   padding: 20px;
-  position: relative;
+}
+
+.graphic-section .graphic-content {
+  display: flex;
+  align-items: center; /* Vertically center the image and text */
+  width: 100%;
 }
 
 .graphic-section img {
-  position: absolute;
-  top: 10%; /* Adjust as needed */
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 50%; /* Adjust image size */
-  z-index: 2;
+  flex: 1; /* Take up equal space */
+  max-width: 50%; /* Restrict to half the section width */
+  height: auto; /* Maintain aspect ratio */
 }
 
-.graphic-content {
-  z-index: 1;
+.graphic-section .text-content {
+  flex: 1; /* Take up equal space */
   padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 300px; /* Push content below the image */
+  text-align: left; /* Align text to the left */
+}
+
+.graphic-section .text-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.graphic-section .text-content p {
+  font-size: 1.2rem;
 }
 
 /* Text Styling */
