@@ -105,11 +105,43 @@ nav a:hover {
 
 .graphic-section {
   display: flex;
-  align-items: center; /* Center vertically */
-  min-height: 100vh;
-  background-color: #121212; /* Dark background for contrast */
-  padding: 0 20px; /* Adds space around the content */
+  align-items: center; /* Vertically center content */
+  min-height: 100vh; /* Full height of the viewport */
+  background-color: #121212; /* Dark background */
+  padding: 20px;
 }
+
+.text-content {
+  flex: 1; /* Take up half of the section */
+  color: #fff;
+  text-align: center; /* Center the text horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the text vertically */
+}
+
+.text-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+}
+
+.graphic-image-container {
+  flex: 1; /* Take up half of the section */
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+}
+
+.graphic-image {
+  max-height: 100%; /* Make the image fit the height */
+  max-width: 100%; /* Ensure it scales properly */
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
 
 .text-content {
   flex: 1; /* Occupies the left side */
