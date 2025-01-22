@@ -106,14 +106,14 @@ nav a:hover {
 .graphic-section {
   display: flex;
   align-items: center; /* Vertically align content */
-  justify-content: space-between; /* Add spacing between text and image */
-  min-height: 100vh; /* Full height of the viewport */
+  justify-content: space-between; /* Separate text and image */
+  min-height: 100vh; /* Full viewport height */
   background-color: #121212; /* Solid dark background */
-  padding: 20px;
+  padding: 0 20px; /* Add padding for spacing */
 }
 
 .text-content {
-  flex: 1; /* Allow text content to take the left half */
+  flex: 1; /* Allocate space for the text */
   color: #fff;
   text-align: center; /* Center text horizontally */
   display: flex;
@@ -131,51 +131,18 @@ nav a:hover {
 }
 
 .graphic-image-container {
-  flex: 1; /* Allow the image container to take the right half */
+  flex: 1; /* Allocate space for the image */
   display: flex;
-  justify-content: flex-end; /* Push the image to the right */
+  justify-content: flex-end; /* Align the image to the right */
   align-items: center; /* Center the image vertically */
 }
 
 .graphic-image {
   height: 100%; /* Full height of the section */
   width: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure the image fills the height */
+  object-fit: cover; /* Ensure the image covers the height */
 }
 
-
-.text-content {
-  flex: 1; /* Occupies the left side */
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left; /* Align text to the left */
-  padding: 20px;
-}
-
-.text-content h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.text-content p {
-  font-size: 1.2rem;
-  margin-bottom: 0;
-}
-
-.graphic-image-container {
-  flex: 1; /* Occupies the right side */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.graphic-image {
-  max-height: 90%; /* Keeps the image within bounds */
-  width: auto; /* Maintains aspect ratio */
-  object-fit: contain;
-}
 
 .text-content {
   flex: 1;
