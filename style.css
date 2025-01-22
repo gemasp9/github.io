@@ -105,31 +105,39 @@ nav a:hover {
 
 .graphic-section {
   display: flex;
-  align-items: center; /* Center content vertically */
-  justify-content: flex-start; /* Align content to the left */
-  background-color: #121212; /* Solid dark background */
-  color: #fff; /* White text */
+  align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  background-color: #121212; /* Solid dark color background */
 }
 
-.graphic-section .graphic-image {
-  height: 100vh; /* Make the image span the entire height */
+.graphic-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Ensure no overflow from the image */
+}
+
+.graphic-image {
+  height: 100%;
   width: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure the image covers the full height */
+  object-fit: cover;
 }
 
-.graphic-section .text-content {
-  margin-left: 20px; /* Add spacing between image and text */
-  max-width: 50%; /* Restrict the width of the text content */
+.text-content {
+  flex: 1;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
 
-.graphic-section .text-content h2 {
+.text-content h2 {
   font-size: 3rem;
   margin-bottom: 20px;
 }
 
-.graphic-section .text-content p {
+.text-content p {
   font-size: 1.2rem;
 }
 
