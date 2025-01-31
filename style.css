@@ -15,25 +15,8 @@ body {
   min-height: 100vh;
   color: #fff;
   padding: 20px;
-  /* Updated background with new colors */
-  background: linear-gradient(135deg, #00b4db, #0083b0);
-  /* Remove extra gradients if not needed or add new ones below */
-  /* background-image: linear-gradient(
-      115deg,
-      rgb(211, 255, 215),
-      rgb(0, 0, 0)
-    ),
-    radial-gradient(
-      90% 100% at 50% 0%,
-      rgb(200, 200, 200),
-      rgb(22, 0, 45)
-    ),
-    radial-gradient(
-      100% 100% at 80% 0%,
-      rgb(250, 255, 0),
-      rgb(36, 0, 0)
-    );
-  background-blend-mode: overlay, overlay, difference; */
+  /* Updated gradient that flows into the dark color of the last page (#1E1E1E) */
+  background: linear-gradient(135deg, #444444, #1E1E1E);
 }
 
 /* Navigation */
@@ -62,11 +45,11 @@ nav a:hover {
 /* Graphic Section (Second Page) */
 .graphic-section {
   display: flex;
-  align-items: center;       /* vertically center content */
-  justify-content: center;   /* center overall content horizontally */
-  min-height: 100vh;         /* Full viewport height */
-  background-color: #121212; /* Dark background */
-  padding: 20px;             /* Spacing */
+  align-items: center;        /* Vertically center content */
+  justify-content: center;    /* Center overall content horizontally */
+  min-height: 100vh;          /* Full viewport height */
+  background-color: #121212;  /* Dark background */
+  padding: 0;                 /* Remove extra padding for full-size effect */
 }
 
 /* Text Content for the Graphic Section */
@@ -75,10 +58,10 @@ nav a:hover {
   color: #fff;
   display: flex;
   flex-direction: column;
-  align-items: center;       /* Center text horizontally */
-  justify-content: center;   /* Center text vertically */
+  align-items: center;        /* Center text horizontally */
+  justify-content: center;    /* Center text vertically */
   padding: 20px;
-  text-align: center;        /* Center text */
+  text-align: center;
 }
 
 .text-content h2 {
@@ -93,17 +76,18 @@ nav a:hover {
 /* Graphic Image Container */
 .graphic-image-container {
   flex: 1;
-  display: flex;
-  align-items: center;       /* Center image vertically */
-  justify-content: center;   /* Center image horizontally */
-  padding: 20px;
+  position: relative;         /* For absolutely positioning the image */
+  height: 100vh;              /* Full viewport height */
 }
 
-/* Graphic Image Styling */
+/* Graphic Image Styling (Full-Size) */
 .graphic-image {
-  max-width: 100%;  /* Responsive width */
-  height: auto;     /* Maintain aspect ratio */
-  object-fit: contain; /* Ensure the image scales without cutting off content */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* Ensures the image covers the container */
 }
 
 /* Bold Section */
