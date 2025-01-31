@@ -1,22 +1,12 @@
 /* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
-}
-
-/* Landing Page Styles */
-.landing-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-  color: #fff;
-  padding: 20px;
-  /* Updated gradient that flows into the dark color of the last page (#1E1E1E) */
-  background: linear-gradient(135deg, #444444, #1E1E1E);
 }
 
 /* Navigation */
@@ -26,7 +16,7 @@ nav {
   width: 100%;
   background: rgba(0, 0, 0, 0.8);
   padding: 10px 20px;
-  z-index: 10;
+  z-index: 100;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -42,84 +32,121 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Graphic Section (Second Page) */
-.graphic-section {
-  display: flex;
-  align-items: center;        /* Vertically center content */
-  justify-content: center;    /* Center overall content horizontally */
-  min-height: 100vh;          /* Full viewport height */
-  background-color: #121212;  /* Dark background */
-  padding: 0;                 /* Remove extra padding for full-size effect */
+/* Landing Page */
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+  background: url('Website gema.png') no-repeat center center;
+  background-size: cover;
 }
 
-/* Text Content for the Graphic Section */
-.text-content {
-  flex: 1;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;        /* Center text horizontally */
-  justify-content: center;    /* Center text vertically */
-  padding: 20px;
-  text-align: center;
-}
-
-.text-content h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.text-content p {
-  font-size: 1.2rem;
-}
-
-/* Graphic Image Container */
-.graphic-image-container {
-  flex: 1;
-  position: relative;         /* For absolutely positioning the image */
-  height: 100vh;              /* Full viewport height */
-}
-
-/* Graphic Image Styling (Full-Size) */
-.graphic-image {
+/* Optional overlay to darken the image for better text contrast */
+.landing-page .overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;          /* Ensures the image covers the container */
-}
-
-/* Bold Section */
-.bold-section {
-  background-color: #FF6B6B;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* adjust opacity as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   text-align: center;
-  padding: 80px 20px;
-  min-height: 100vh;
+  padding: 20px;
 }
 
-.bold-section h2 {
+.landing-page h1 {
   font-size: 3rem;
+  margin-bottom: 10px;
 }
 
-.bold-section p {
+.landing-page p {
+  font-size: 1.5rem;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 80px 20px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.portfolio-section p {
   font-size: 1.2rem;
+  margin-bottom: 40px;
 }
 
-/* Contact Section */
-.contact-section {
-  background-color: #1E1E1E;
+.portfolio-item {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 5px solid #ddd;
+}
+
+/* Services Section */
+.services-section {
+  padding: 80px 20px;
+  background: #1E1E1E;
   color: #fff;
   text-align: center;
-  padding: 60px 20px;
 }
 
-.contact-section a {
-  color: #FF6600;
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.services-list li {
+  margin: 10px 0;
+}
+
+/* Book a Meeting Button */
+.book-button {
+  display: inline-block;
+  background: #FF6600;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1rem;
   text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
-.contact-section a:hover {
-  text-decoration: underline;
+.book-button:hover {
+  background: #e65c00;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .landing-page h1 {
+    font-size: 2.5rem;
+  }
+  
+  .landing-page p {
+    font-size: 1.2rem;
+  }
+  
+  .portfolio-section h2,
+  .services-section h2 {
+    font-size: 2rem;
+  }
 }
