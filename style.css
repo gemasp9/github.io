@@ -55,13 +55,12 @@ nav .nav-links a {
 nav .nav-links a:hover {
   color: #FF6600;
 }
-
 /* Hero Section with Moving Gradient Background */
 .hero-section {
   position: relative;
   height: 100vh;
-  /* Moving dark gradient background */
-  background: linear-gradient(45deg, #222, #111, #222);
+  /* Adjusted dark gradient colors for visibility */
+  background: linear-gradient(45deg, #1a1a1a, #111111, #1a1a1a);
   background-size: 600% 600%;
   animation: gradientAnimation 15s ease infinite;
   display: flex;
@@ -71,8 +70,8 @@ nav .nav-links a:hover {
 
 /* Keyframes for the moving gradient */
 @keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
@@ -83,13 +82,15 @@ nav .nav-links a:hover {
   justify-content: center;
   width: 90%;
   max-width: 1200px;
+  position: relative; /* Ensure stacking context for child elements */
+  z-index: 2;         /* Bring text and image above the background */
 }
 
 /* Hero Text Block */
 .hero-text {
   flex: 1;
   color: #fff;
-  text-align: center; /* Centers text horizontally */
+  text-align: center;
   padding: 20px;
 }
 .hero-text h1 {
