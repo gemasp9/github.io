@@ -22,20 +22,61 @@
     </div>
   </nav>
 
-<!-- Hero Section -->
-<section id="hero" class="hero-section">
-  <div class="hero-container">
-    <!-- Text Block -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hero Section Test</title>
+  <style>
+    /* Reset margins and padding */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    /* Hero Section with Moving Gradient */
+    .hero-section {
+      position: relative;
+      height: 100vh;  /* Full viewport height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(45deg, #1a1a1a, #111111, #1a1a1a);
+      background-size: 600% 600%;
+      animation: gradientAnimation 15s ease infinite;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* Keyframes for the moving gradient */
+    @keyframes gradientAnimation {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5em;
+    }
+    
+    .hero-text p {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
     <div class="hero-text">
       <h1>Welcome to My Portfolio</h1>
       <p>Your tagline goes here.</p>
     </div>
-    <!-- Image Block -->
-    <div class="hero-image">
-      <img src="website-gema.png" alt="Hero Image">
-    </div>
-  </div>
-</section>
+  </section>
+</body>
+</html>
+
 
 
 
