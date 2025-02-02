@@ -3,18 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Starry Night with SVG Image</title>
+  <title>My Portfolio</title>
   <style>
-    /* Basic Reset */
-    html, body {
+    /* Global Styles & Reset */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      height: 100%;
-      background: #000; /* Pure dark background */
-      overflow: hidden;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #000;
+      overflow-x: hidden;
     }
     
-    /* Hero Section */
+    /* Navigation (Fixed at Top) */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      color: #fff;
+      padding: 10px 20px;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    
+    /* HERO SECTION */
     .hero-section {
       position: relative;
       height: 100vh;
@@ -25,33 +51,29 @@
       color: #fff;
       text-align: center;
     }
-    
-    /* Stars Container */
+    /* Stars Overlay (Generated via JS) */
     .stars {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      pointer-events: none;
       z-index: 1;
-      pointer-events: none; /* Allow clicks to pass through */
     }
-    
-    /* Star Style */
+    /* Star Element */
     .star {
       position: absolute;
       border-radius: 50%;
       opacity: 0;
       animation: twinkle 4s infinite ease-in-out;
     }
-    
     @keyframes twinkle {
       0%   { opacity: 0; transform: scale(0.5); }
       50%  { opacity: 1; transform: scale(1); }
       100% { opacity: 0; transform: scale(0.5); }
     }
-    
-    /* Content Container: holds text and image */
+    /* Hero Content (Text + Image) */
     .hero-content {
       position: relative;
       z-index: 2;
@@ -62,45 +84,135 @@
       gap: 20px;
       padding: 0 20px;
     }
-    
-    /* Text Block */
     .hero-text {
       flex: 1 1 300px;
       text-align: center;
     }
-    
     .hero-text h1 {
       font-size: 3.5rem;
-      margin: 0;
+      margin-bottom: 10px;
     }
-    
     .hero-text p {
       font-size: 1.5rem;
-      margin-top: 10px;
     }
-    
-    /* Image Block */
     .hero-image {
       flex: 1 1 300px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    
     .hero-image img {
       max-width: 100%;
       height: auto;
-      /* Optional: add a subtle drop shadow to help the image stand out */
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    
+    /* PORTFOLIO SECTION */
+    .portfolio-section {
+      padding: 80px 20px;
+      background: #f4f4f4;
+      color: #333;
+      text-align: center;
+    }
+    .portfolio-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .portfolio-section p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 3px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    /* SERVICES SECTION */
+    .services-section {
+      padding: 80px 20px;
+      background: #1E1E1E;
+      color: #fff;
+      text-align: center;
+    }
+    .services-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .services-list {
+      list-style: none;
+      padding: 0;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+    .services-list li {
+      margin: 10px 0;
+    }
+    .btn {
+      display: inline-block;
+      background: #FF6600;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #e65c00;
+    }
+    
+    /* CONTACT SECTION */
+    .contact-section {
+      padding: 80px 20px;
+      background: #fff;
+      color: #333;
+      text-align: center;
+    }
+    .contact-section h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+    .contact-section p {
+      font-size: 1rem;
+    }
+    
+    /* Responsive Adjustments (Optional) */
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <section class="hero-section">
+  <!-- Navigation -->
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-section">
     <!-- Stars Overlay -->
     <div class="stars"></div>
     
-    <!-- Hero Content: Contains both Text and Image -->
+    <!-- Hero Content (Text and Image) -->
     <div class="hero-content">
       <div class="hero-text">
         <h1>Welcome to My Portfolio</h1>
@@ -108,40 +220,65 @@
       </div>
       <div class="hero-image">
         <!-- Updated to use website-gema.svg -->
-        <img src="website-gema.svg" alt="Your Portfolio SVG">
+        <img src="website-gema.svg" alt="Portfolio SVG">
       </div>
     </div>
   </section>
   
+  <!-- PORTFOLIO SECTION -->
+  <section id="portfolio" class="portfolio-section">
+    <h2>My Work</h2>
+    <p>Here are some examples of projects I’ve worked on.</p>
+    <div class="portfolio-grid">
+      <!-- Replace sample images with your portfolio images -->
+      <div class="portfolio-item"><img src="Gema.png" alt="Portfolio Sample 1"></div>
+      <div class="portfolio-item"><img src="sample2.png" alt="Portfolio Sample 2"></div>
+      <div class="portfolio-item"><img src="sample3.png" alt="Portfolio Sample 3"></div>
+      <div class="portfolio-item"><img src="sample4.png" alt="Portfolio Sample 4"></div>
+    </div>
+  </section>
+  
+  <!-- SERVICES SECTION -->
+  <section id="services" class="services-section">
+    <h2>Services I Provide</h2>
+    <ul class="services-list">
+      <li>Creative Strategy & Branding</li>
+      <li>Graphic & Web Design</li>
+      <li>Digital Marketing</li>
+      <li>Consultation & Project Management</li>
+    </ul>
+    <a class="btn" href="https://calendly.com/your-scheduling-link" target="_blank">Book a Meeting</a>
+  </section>
+  
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section">
+    <h2>Get in Touch</h2>
+    <p>Contact me via email at <a href="mailto:you@example.com">you@example.com</a></p>
+  </section>
+  
+  <!-- JavaScript: Generate Stars in Hero Section -->
   <script>
-    // JavaScript to generate random stars
-    const numStars = 200; // Adjust the number of stars here
+    const numStars = 200; // Number of stars to generate
     const starsContainer = document.querySelector('.stars');
     
     for (let i = 0; i < numStars; i++) {
       const star = document.createElement('div');
       star.classList.add('star');
-      
-      // Random position (in percentage)
+      // Set random position
       star.style.left = Math.random() * 100 + '%';
       star.style.top = Math.random() * 100 + '%';
-      
-      // Random size between 1px and 4px
+      // Set random size between 1px and 4px
       const size = Math.random() * 3 + 1;
       star.style.width = size + 'px';
       star.style.height = size + 'px';
-      
-      // Random animation duration between 3s and 6s (slower twinkling)
+      // Set random animation duration between 3s and 6s (for slower twinkling)
       const duration = Math.random() * 3 + 3;
       star.style.animationDuration = duration + 's';
-      
-      // Random animation delay (so they don't all twinkle in sync)
+      // Random animation delay so they don't all twinkle in sync
       star.style.animationDelay = Math.random() * 5 + 's';
-      
-      // Random color: mostly white, some in your chosen color (#039490)
+      // Random color: mostly white, with some in #039490
       star.style.background = Math.random() > 0.8 ? '#039490' : '#fff';
       
-      // Append the star to the container
       starsContainer.appendChild(star);
     }
   </script>
